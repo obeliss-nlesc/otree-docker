@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Wait for postgress to start
-#until /usr/bin/pg_isready -d ${POSTGRES_DB} -h ${COMPOSE_PROJECT_NAME}-database-1 -p ${POSTGRES_PORT}  -U ${POSTGRES_USER}; do
 until /usr/bin/pg_isready -d ${POSTGRES_DB} -h ${POSTGRES_HOST}  -p ${POSTGRES_PORT}  -U ${POSTGRES_USER}; do
 	echo 'wait for postgres to start...'
 	sleep 5
@@ -19,8 +18,8 @@ if [ ! -f "/opt/init/.done" ]; then
 fi
 
 
+# Check if /opt/otree is empty and install the demo apps if so 
 app_path="/opt/otree"
-
 if [ -z "$(ls -A $app_path)" ]; then
       echo "No app found installing demo apps."
       rm -rf ${app_path}
