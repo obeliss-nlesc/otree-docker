@@ -15,6 +15,7 @@ services:
       - 9091:80
     volumes:
       - "otree-resetdb1:/opt/init"
+      - "./otree-server/app:/opt/otree"
     logging:
       options:
         max-size: "10m"
@@ -58,6 +59,7 @@ services:
       - 9092:80
     volumes:
       - "otree-resetdb2:/opt/init"
+      - "./otree-server/app:/opt/otree"
     logging:
       options:
         max-size: "10m"
@@ -101,6 +103,7 @@ services:
       - 9093:80
     volumes:
       - "otree-resetdb3:/opt/init"
+      - "./otree-server/app:/opt/otree"
     logging:
       options:
         max-size: "10m"
