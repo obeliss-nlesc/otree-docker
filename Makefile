@@ -1,6 +1,9 @@
 
 # -- Building the Images
 
+rm-volumes:
+	docker volume ls | grep otree | awk '{print $2}' | xargs docker volume rm
+
 up:
 	docker compose -p otree-demos-3 -f docker-compose.yaml up 
 
