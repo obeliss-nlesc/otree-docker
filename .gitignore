@@ -6,3 +6,6 @@ app/*
 github_api.token
 secrets.env
 app
+
+# IntelliJ files
+**.iml
