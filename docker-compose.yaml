@@ -2,10 +2,7 @@ version: "3"
 
 services:
   otree1:
-    build: 
-      context: ./otree-server
-      args: 
-        OTREE_APP_FOLDER: app
+    image: obeliss/otree-server
     env_file:
       - config.env
       - secrets.env
@@ -15,7 +12,6 @@ services:
       - 9091:80
     volumes:
       - "otree-resetdb1:/opt/init"
-      - "./otree-server/app:/opt/otree"
     logging:
       options:
         max-size: "10m"
@@ -46,10 +42,7 @@ services:
       db-net:
 
   otree2:
-    build: 
-      context: ./otree-server
-      args: 
-        OTREE_APP_FOLDER: app
+    image: obeliss/otree-server
     env_file:
       - config.env
       - secrets.env
@@ -59,7 +52,6 @@ services:
       - 9092:80
     volumes:
       - "otree-resetdb2:/opt/init"
-      - "./otree-server/app:/opt/otree"
     logging:
       options:
         max-size: "10m"
@@ -90,10 +82,7 @@ services:
       db-net:
   
   otree3:
-    build: 
-      context: ./otree-server
-      args: 
-        OTREE_APP_FOLDER: app
+    image: obeliss/otree-server
     env_file:
       - config.env
       - secrets.env
@@ -103,7 +92,6 @@ services:
       - 9093:80
     volumes:
       - "otree-resetdb3:/opt/init"
-      - "./otree-server/app:/opt/otree"
     logging:
       options:
         max-size: "10m"
