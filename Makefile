@@ -6,6 +6,9 @@ rm:
 	docker volume ls | grep otree | awk '{print $$2}' | xargs docker volume rm
 	docker network ls | grep otree | awk '{print $$2}' | xargs docker network rm
 
+clean: rm
+	echo "Removing volumes"
+
 up:
 	docker compose -p otree-demos-3 -f docker-compose.yaml up 
 
@@ -22,7 +25,5 @@ down-one:
 all: otree-server up
 	echo "Built all images"
 
-otree-server:
-	docker build \
-		-f otree-server/Dockerfile \
-		-t obeliss/otree-server .
+build:
+	cd ./otree-server;docker build -t obeliss/otree-server .
