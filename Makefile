@@ -9,10 +9,10 @@ clean: down rm
 	echo "Removing volumes"
 
 up: build
-	docker compose -p otree-demos-3 -f docker-compose.yaml up 
+	docker-compose -p otree-demos-3 -f docker-compose.yaml up 
 
 down:
-	docker compose -p otree-demos-3 -f docker-compose.yaml down 
+	docker-compose -p otree-demos-3 -f docker-compose.yaml down 
 
 all: build up
 	echo "Built all images"
