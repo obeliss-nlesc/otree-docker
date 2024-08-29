@@ -5,11 +5,8 @@
 ### Running
 
 Copy `_secrets.env` to `secrets.env` and modify accordingly.
-
-Then install `otree-core`, following the instructions [here](https://github.com/obeliss-nlesc/otree-core) (only run the `install` command). Now go to the `otree-server` directory (`cd otree-server`).
-
-Make sure there is no directory called `app` in there, delete it with `rm -r ./app` otherwise. Now we create sample games with `otree startproject app`, answer `y` to the question if you want to include sample games.
-
+Check `config.env` to change the default settings for the Docker images that will be built.
+By default the Docker images will pull the oTree experiments from `GIT_EXP_URL` which is defined in `config.env` file.  
 In a new terminal, go to the root of this project. To run a 3 oTree instance setup run:
 
 ```shell
